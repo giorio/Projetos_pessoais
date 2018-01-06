@@ -1,0 +1,7 @@
+div#premio {
+    visibility: hidden;
+}
+
+div#entrada {
+    display: block;
+}
