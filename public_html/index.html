@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="col-xs-12 col-md-8">
-                    <input type="image" id="sorteio" class="btn btn-defaut" src="imagens/bau.jpg">
+                    <input type="image" id="sorteio" class="btn btn-defaut" onclick="itemMagico()" src="imagens/bau.jpg">
                 </div>
             </div>
         </form>
@@ -52,7 +52,7 @@
                         <span>Você ganhou <em id="itemMagico"><b></b></em></span>
                     </div>
                     <div class="col-xs-12 col-md-8 col-md-offset-2 col-xs-offset-2">
-                        <a class="btn btn-default" id="novoSorteio" href="index.html" role="button">
+                        <a class="btn btn-default" id="novoSorteio" role="button">
                             Novo Sorteio
                         </a>
                     </div>
@@ -63,16 +63,15 @@
         
         <script>
             $(function(){
-                jQuery("#sorteio").click(itemMagico());
-                
+               
                 jQuery("#sorteio").click(function(){
-					document.getElementById("entrada").style.display = "none";
-					document.getElementById("premio").style.visibility = "visible";
+                    document.getElementById("entrada").style.display = "none";
+                    document.getElementById("premio").style.visibility = "visible";
                 });
                 
                 jQuery("#novoSorteio").click(function(){
-                	document.getElementById("imgbox1").style.display = "block";
-                	document.getElementById("imgbox2").style.visibility = "hidden";
+                    document.getElementById("imgbox1").style.display = "block";
+                    document.getElementById("imgbox2").style.visibility = "hidden";
                 });
             });
         </script>

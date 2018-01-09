@@ -4,10 +4,9 @@
  * and open the template in the editor.
  */
 
-function itemMagico(cat) {
-	var categoria = parseInt(document.getElementsByClassName("radio"));									//pega a entrada do usuário 1-Menor; 2-Médio; 3-Maior
-	//var categoria = parseInt(cat);
-	var sort = Math.floor(Math.random() * 100 + 1);														//Gera um nº aleatório entre 0 e 100
+function itemMagico() {
+	var categoria = parseInt(document.getElementsByClassName("categoria").value);	//pega a entrada do usuário 1-Menor; 2-Médio; 3-Maior
+        var sort = Math.floor(Math.random() * 100 + 1);				//Gera um nº aleatório entre 0 e 100
   
 	switch (categoria) {
 		case 1:
@@ -64,7 +63,7 @@ function itemMagico(cat) {
 	document.getElementById('itemMagico').innerHTML = itemMagico;
 };
 
-function calcularPrecoDef(precoBase) {										/*Calcular o preço a ser adiocionado ao equipamento*/
+function calcularPrecoDef(precoBase) {						/*Calcular o preço a ser adiocionado ao equipamento*/
 	var preco = 0;
 	switch (precoBase) {
 		case 1:
