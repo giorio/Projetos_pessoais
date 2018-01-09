@@ -15,30 +15,30 @@
               <h3>Gerador Aleatório de Item</h3>
             </div>
         </div>
-        <form class="form-horizontal" id="entrada">
-            <div class="row">
+        <form class="form-horizontal">
+            <div class="row" id="entrada">
                 <div class="col-xs-2 col-md-1 col-md-offset-1 col-xs-offset-1">
 
                        <br>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="categoria" value="1">Menor
+                                <input type="radio" name="categoria" value=1>Menor
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="categoria" value="2">Médio
+                                <input type="radio" name="categoria" value=2>Médio
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="categoria" value="3">Maior
+                                <input type="radio" name="categoria" value=3>Maior
                             </label>
                         </div>
                 </div>
 
                 <div class="col-xs-12 col-md-8">
-                    <input type="image" id="sorteio" class="btn btn-defaut" onclick="itemMagico()" src="imagens/bau.jpg">
+                    <input type="image" id="sorteio" class="btn btn-defaut" onclick="SorteioItemMagico()" src="imagens/bau.jpg">
                 </div>
             </div>
         </form>
@@ -67,11 +67,13 @@
                 jQuery("#sorteio").click(function(){
                     document.getElementById("entrada").style.display = "none";
                     document.getElementById("premio").style.visibility = "visible";
+                    return false;
                 });
                 
                 jQuery("#novoSorteio").click(function(){
-                    document.getElementById("imgbox1").style.display = "block";
-                    document.getElementById("imgbox2").style.visibility = "hidden";
+                    document.getElementById("entrada").style.display = "block";
+                    document.getElementById("premio").style.visibility = "hidden";
+                    return false;
                 });
             });
         </script>

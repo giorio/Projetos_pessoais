@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 
-function itemMagico() {
-	var categoria = parseInt(document.getElementsByClassName("categoria").value);	//pega a entrada do usuário 1-Menor; 2-Médio; 3-Maior
+function SorteioItemMagico() {
+	var categoria = parseInt(document.getElementsByName("categoria").value);	//pega a entrada do usuário 1-Menor; 2-Médio; 3-Maior
         var sort = Math.floor(Math.random() * 100 + 1);				//Gera um nº aleatório entre 0 e 100
   
 	switch (categoria) {
