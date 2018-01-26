@@ -54,6 +54,7 @@ function SorteioItemMagico(categoria) {
 			break;
 	};
 	document.getElementById('itemMagico').innerHTML = itemMagico;
+	//return itemMagico;
 };
 
 function calcularPrecoDef(precoBase) {						/*Calcular o preço a ser adiocionado ao equipamento*/
@@ -343,7 +344,7 @@ function sorteioEquipDef(cat) {															//função para sorteio de equipam
 
 		preco += calcularPrecoDef(precoBase);
 
-		return "Escudo: " + escudo[sorteioEsc] + " " + bonus + " " + multHab.toString() + " com o valor: " + preco + " PO.";
+		return "Escudo: " + escudo[sorteioEsc] + " " + bonus + " " + multHab.join(", ") + " com o valor: " + preco + " PO.";
 	};
 
 	if (equipamento == 2) {															//Cria sorteio para armadura
@@ -385,7 +386,7 @@ function sorteioEquipDef(cat) {															//função para sorteio de equipam
 
 		preco += calcularPrecoDef(precoBase);
 
-		return "Armadura: " + armadura[sortArmad] + " " + bonus + " " + multHab.toString() + " com o valor: " + preco + " PO.";
+		return "Armadura: " + armadura[sortArmad] + " " + bonus + " " + multHab.join(", ") + " com o valor: " + preco + " PO.";
 	};
 
 	if (sorteioEscEsp>0) {
@@ -429,7 +430,7 @@ function sorteioEquipDef(cat) {															//função para sorteio de equipam
 			valorArmadEsp = [10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,18900,18900,18900,18900,18900,18900,18900,18900,18900,18900,18900,18900,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,24650,24650,24650,24650,24650,24650,24650,24650,24650,24650,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,52260,52260,52260,52260,52260,52260,52260,52260,52260,52260];
 		};
 
-		return "Escudo: " + armadEsp[sorteioArmdEsp] + " com o valor: " + valorArmadEsp[sorteioArmdEsp] + " PO.";
+		return "Armadura: " + armadEsp[sorteioArmdEsp] + " com o valor: " + valorArmadEsp[sorteioArmdEsp] + " PO.";
 
 	};
 };
@@ -690,7 +691,7 @@ function SorteioArma(cat) {																//função para sorteio de arma menor
 		var sortMelee = Math.floor(Math.random() * 100);										//sorteio para arma corpo a corpo
 		preco += valorArmaMelee[sortMelee]
 		
-		return "Arma: " + armaMelee[sortMelee] + " " + multHab.toString() + ", valor: " + preco + " PO.";
+		return "Arma: " + armaMelee[sortMelee] + " " + bonus + " " + multHab.join(", ") + ", valor: " + preco + " PO.";
 	};
 
 	if (tipo == 2) {
@@ -699,7 +700,7 @@ function SorteioArma(cat) {																//função para sorteio de arma menor
 		var sortInco = Math.floor(Math.random() * 100);											//sorteio para arma incomum
 		preco += valorArmaInc[sortInco]
 		
-		return "Arma: " + armaInc[sortInco] + " " + multHab.toString() + ", valor: " + preco + " PO.";
+		return "Arma: " + armaInc[sortInco] + " " + bonus + " " + multHab.join(", ") + ", valor: " + preco + " PO.";
 	};
 
 	if (tipo == 3) {
@@ -708,7 +709,7 @@ function SorteioArma(cat) {																//função para sorteio de arma menor
 		var sortRange = Math.floor(Math.random() * 100);										//sorteio para arma a distância
 		preco += valorArmaRange[sortRange]
 		
-		return "Arma: " + armaRange[sortRange] + " " + multHab.toString() + ", valor: " + preco + " PO.";
+		return "Arma: " + armaRange[sortRange] + " " + bonus + " " + multHab.join(", ") + ", valor: " + preco + " PO.";
 	};
 };
 
@@ -907,7 +908,7 @@ function sorteioPergaminhos(cat) {														//função para sorteio de perga
 				valorMagiaArc = [4870,4870,4870,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,8825,8825,8825,8825,8825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,4825,4825,4825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,28825];
 				break;
 		};
-		return "Pergaminho de Magia Arcano de nível: " + nvlMagia + " e nível do conjurador: " + nvlConj + " com a magia: " + magiaArc[idMagiaArc] + "no valor de " + valorMagiaArc[idMagiaArc] +" PO.";
+		return "Pergaminho de Magia Arcano de nível: " + nvlMagia + " e nível do conjurador: " + nvlConj + " com a magia: " + magiaArc[idMagiaArc] + " no valor de " + valorMagiaArc[idMagiaArc] +" PO.";
 	};
 
 	if (tipo == 2) {																	//magia divina
@@ -956,7 +957,7 @@ function sorteioPergaminhos(cat) {														//função para sorteio de perga
 				valorMagiaDiv = [4870,4870,4870,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,8825,8825,8825,8825,8825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,4825,4825,4825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,28825];
 				break;
 		};
-		return "Pergaminho de Magia Divina de nível: " + nvlMagia + " e nível do conjurador: " + nvlConj + " com a magia: " + magiaDiv[idMagiaDiv] + "no valor de " + valorMagiaDiv[idMagiaDiv] +" PO.";
+		return "Pergaminho de Magia Divina de nível: " + nvlMagia + " e nível do conjurador: " + nvlConj + " com a magia: " + magiaDiv[idMagiaDiv] + " no valor de " + valorMagiaDiv[idMagiaDiv] +" PO.";
 	};
 };
 
