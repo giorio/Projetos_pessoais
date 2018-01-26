@@ -1,13 +1,6 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+function SorteioItemMagico(categoria) {
+	var sort = Math.floor(Math.random() * 100 + 1);				//Gera um nº aleatório entre 0 e 100
 
-function SorteioItemMagico() {
-	var categoria = parseInt(document.getElementsByName("categoria").value);	//pega a entrada do usuário 1-Menor; 2-Médio; 3-Maior
-        var sort = Math.floor(Math.random() * 100 + 1);				//Gera um nº aleatório entre 0 e 100
-  
 	switch (categoria) {
 		case 1:
 			if (sort < 92) {
@@ -101,12 +94,11 @@ function calcularPrecoDef(precoBase) {						/*Calcular o preço a ser adiocionad
 };
 
 function sorteioEquipDef(cat) {															//função para sorteio de equipamento de defesa
-  var cat = 2;
 	var equipamento	= 0;																//1 - escudo e 2 - armadura	var controle = false;
 	var precoBase = 0;
 	var multHab = new Array();
 	var preco = 0;
-  var sorteioEqui = 0;
+	var sorteioEqui = Math.floor(Math.random() * 100 + 1);
 
 	switch(cat) {
 		case 1:
@@ -351,8 +343,7 @@ function sorteioEquipDef(cat) {															//função para sorteio de equipam
 
 		preco += calcularPrecoDef(precoBase);
 
-		var testeEsc = "Escudo: " + escudo[sorteioEsc]+ " " + multHab.toString() + " com o valor: " + preco + " PO.";
-		return "Escudo: " + escudo[sorteioEsc] + " " + multHab.toString() + " com o valor: " + preco + " PO.";
+		return "Escudo: " + escudo[sorteioEsc] + " " + bonus + " " + multHab.toString() + " com o valor: " + preco + " PO.";
 	};
 
 	if (equipamento == 2) {															//Cria sorteio para armadura
@@ -394,8 +385,7 @@ function sorteioEquipDef(cat) {															//função para sorteio de equipam
 
 		preco += calcularPrecoDef(precoBase);
 
-		var testeArm = "Armadura: " + armadura[sortArmad] + " " + multHab.toString() + " com o valor: " + preco + " PO.";
-		return "Armadura: " + armadura[sortArmad] + " " + multHab.toString() + " com o valor: " + preco + " PO.";
+		return "Armadura: " + armadura[sortArmad] + " " + bonus + " " + multHab.toString() + " com o valor: " + preco + " PO.";
 	};
 
 	if (sorteioEscEsp>0) {
@@ -408,16 +398,15 @@ function sorteioEquipDef(cat) {															//função para sorteio de equipam
 		};
 
 		if (cat == 2) {
-			escudEsp = ["Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte"];
-			valorEscudEsp = [1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,4150,4150,4150,4150,4150,4150,4150,4150,4150,4150,4150,4150,5165,5165,5165,5165,5165,5165,5165,5165,5165,5165,10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,18900,18900,18900];
+			escudEsp = ["Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo Alado","Escudo Alado","Escudo Alado","Escudo Alado","Escudo Alado"];
+			valorEscudEsp = [205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,5580,5580,5580,5580,5580,9170,9170,9170,9170,9170,17257,17257,17257,17257,17257];
 		};
 
 		if (cat == 3) {
-			escudEsp = ["Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca"];
-			valorEscudEsp = [10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,18900,18900,18900,18900,18900,18900,18900,18900,18900,18900,18900,18900,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,24650,24650,24650,24650,24650,24650,24650,24650,24650,24650,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,52260,52260,52260,52260,52260,52260,52260,52260,52260,52260];
+			escudEsp = ["Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente"];
+			valorEscudEsp = [3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170];
 		};
 
-		var testeEscEscp = "Escudo: " + escudEsp[sorteioEscEsp] + " com o valor: " + valorEscudEsp[sorteioEscEsp] + " PO.";
 		return "Escudo: " + escudEsp[sorteioEscEsp] + " com o valor: " + valorEscudEsp[sorteioEscEsp] + " PO.";
 	};
 
@@ -431,16 +420,15 @@ function sorteioEquipDef(cat) {															//função para sorteio de equipam
 		};
 
 		if (cat == 2) {
-			armadEsp = ["Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Broquel de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo de Madeira Negra","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo Grande de Mitral","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo Alado","Escudo Alado","Escudo Alado","Escudo Alado","Escudo Alado"];
-			valorArmadEsp = [205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,205,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,257,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,1020,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,5580,5580,5580,5580,5580,9170,9170,9170,9170,9170,17257,17257,17257,17257,17257];
+			armadEsp = ["Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Camisão de Mitral","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Armadura de Couro de Dragão","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Cota de Malha Élfica","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Couro de Rinoceronte","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte"];
+			valorArmadEsp = [1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,1100,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,3300,4150,4150,4150,4150,4150,4150,4150,4150,4150,4150,4150,4150,5165,5165,5165,5165,5165,5165,5165,5165,5165,5165,10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,18900,18900,18900];
 		};
 
 		if (cat == 3 ) {
-			armadEsp = ["Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo do Conjurador","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo Espinhoso","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo do Leão","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente","Escudo Absorvente"];
-			valorArmadEsp = [3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,3153,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,5580,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,9170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170,50170];
+			armadEsp = ["Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Peitoral de Adamante","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Armadura dos Anões","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Loriga Segmentada da Sorte","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura Celesital","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Armadura das Profundezas","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Peitoral do Comando","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura de Mitral da Velocidade","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca","Armadura Demoníaca"];
+			valorArmadEsp = [10200,10200,10200,10200,10200,10200,10200,10200,10200,10200,16500,16500,16500,16500,16500,16500,16500,16500,16500,16500,18900,18900,18900,18900,18900,18900,18900,18900,18900,18900,18900,18900,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,22400,24650,24650,24650,24650,24650,24650,24650,24650,24650,24650,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,25400,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,26500,52260,52260,52260,52260,52260,52260,52260,52260,52260,52260];
 		};
 
-		var testeArmdEscp = "Escudo: " + armadEsp[sorteioArmdEsp] + " com o valor: " + valorArmadEsp[sorteioArmdEsp] + " PO.";
 		return "Escudo: " + armadEsp[sorteioArmdEsp] + " com o valor: " + valorArmadEsp[sorteioArmdEsp] + " PO.";
 
 	};
@@ -689,8 +677,6 @@ function SorteioArma(cat) {																//função para sorteio de arma menor
 		};
 		
 		return	"Arma: " + armaEsp[sortArmaEsp] + ", valor: " + valorArmEsp[sortArmaEsp] + " PO.";
-		var testeesp= "Arma: " + armaEsp[sortArmaEsp] + ", valor: " + valorArmEsp[sortArmaEsp] + " PO.";
-
 	};
 
 
@@ -704,7 +690,6 @@ function SorteioArma(cat) {																//função para sorteio de arma menor
 		var sortMelee = Math.floor(Math.random() * 100);										//sorteio para arma corpo a corpo
 		preco += valorArmaMelee[sortMelee]
 		
-		var testeArmM="Arma: " + armaMelee[sortMelee] + " " + multHab.toString() + ", valor: " + preco + " PO.";
 		return "Arma: " + armaMelee[sortMelee] + " " + multHab.toString() + ", valor: " + preco + " PO.";
 	};
 
@@ -714,7 +699,6 @@ function SorteioArma(cat) {																//função para sorteio de arma menor
 		var sortInco = Math.floor(Math.random() * 100);											//sorteio para arma incomum
 		preco += valorArmaInc[sortInco]
 		
-		var testeArmI="Arma: " + armaInc[sortInco] + " " + multHab.toString() + ", valor: " + preco + " PO.";
 		return "Arma: " + armaInc[sortInco] + " " + multHab.toString() + ", valor: " + preco + " PO.";
 	};
 
@@ -724,7 +708,6 @@ function SorteioArma(cat) {																//função para sorteio de arma menor
 		var sortRange = Math.floor(Math.random() * 100);										//sorteio para arma a distância
 		preco += valorArmaRange[sortRange]
 		
-		var testeArmR="Arma: " + armaRange[sortRange] + " " + multHab.toString() + ", valor: " + preco + " PO.";
 		return "Arma: " + armaRange[sortRange] + " " + multHab.toString() + ", valor: " + preco + " PO.";
 	};
 };
@@ -753,7 +736,6 @@ function sorteioPocao(cat) {															//função para sorteio de poção
 		valorItem = [300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,600,600,600,700,700,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,750,900,900,900,1050,1100,1100,1100,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1200,1500,1800,1800,1800,1800,1800,1800,1800,1800,1800,2400,2400,2400,2400,2400,2400,3000,3000,3000];
 	};
 	
-	var testePocao = tipo[id] + ": " + pocao[id] + ", valor: " + valorItem[id] + " PO.";
 	return tipo[id] + ": " + pocao[id] + ", valor: " + valorItem[id] + " PO.";
 };
 
@@ -777,7 +759,6 @@ function sorteioAneis(cat) {															//função para sorteio de anel
 		valorItem = [12000,12000,18000,18000,18000,18000,18000,18000,18000,18000,20000,20000,20000,20000,20000,20000,20000,20000,20000,25000,25000,25000,25000,25000,25000,25000,25000,25000,27000,27000,27000,27000,28000,28000,28000,28000,28000,28000,28000,32000,32000,32000,32000,32000,32000,32000,32000,32000,32000,40000,40000,40000,40000,40000,40000,40000,40000,40000,40000,40000,44000,44000,44000,50000,50000,50000,50000,50000,50000,50000,50000,50000,50000,50000,50000,50000,50000,50000,50000,70000,70000,70000,70000,75000,75000,75000,90000,90000,97950,98280,98280,98280,100000,100000,125000,200000,200000,200000,200000,200000];
 	};
 	
-	var testeAnel = "Anel: " + aneis[id] + ", valor: " + valorItem[id] + " PO.";
 	return "Anel: " + aneis[id] + ", valor: " + valorItem[id] + " PO.";
 };
 
@@ -796,7 +777,6 @@ function sorteioBastoes(cat) {															//função para sorteio de bastão
 		valorItem = [11000,11000,11000,11000,11000,11000,11000,11000,11000,14000,14000,14000,14000,14000,14000,14000,14000,14000,15000,15000,15000,19000,19000,19000,19000,23500,23500,23500,23500,23500,24500,24500,24500,24500,24500,24500,24500,24500,24500,24500,24500,24500,24500,24500,24500,24500,24500,24500,25000,25000,25000,25000,25000,25000,25000,25000,25000,25000,32500,32500,32500,32500,32500,32500,33000,33000,33000,33000,33000,35000,35000,35000,35000,37000,37000,37000,37000,50000,50000,50000,50000,50000,50000,50000,54000,54000,60000,60000,61000,61000,70000,70000,73000,73000,75500,75500,85000,85000,121500,170000];
 	};
 
-	var testeBastao = "Bastão: " + bastoes[id] + ", valor: " + valorItem[id] + " PO.";
 	return "Bastão: " + bastoes[id] + ", valor: " + valorItem[id] + " PO.";
 };
 
@@ -927,7 +907,6 @@ function sorteioPergaminhos(cat) {														//função para sorteio de perga
 				valorMagiaArc = [4870,4870,4870,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,8825,8825,8825,8825,8825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,4825,4825,4825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,28825];
 				break;
 		};
-		var testePergArc = "Pergaminho de Magia Arcano de nível: " + nvlMagia + " e nível do conjurador: " + nvlConj + " com a magia: " + magiaArc[idMagiaArc] + "no valor de " + valorMagiaArc[idMagiaArc] +" PO.";
 		return "Pergaminho de Magia Arcano de nível: " + nvlMagia + " e nível do conjurador: " + nvlConj + " com a magia: " + magiaArc[idMagiaArc] + "no valor de " + valorMagiaArc[idMagiaArc] +" PO.";
 	};
 
@@ -977,7 +956,6 @@ function sorteioPergaminhos(cat) {														//função para sorteio de perga
 				valorMagiaDiv = [4870,4870,4870,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,8825,8825,8825,8825,8825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,4825,4825,4825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,3825,28825];
 				break;
 		};
-		var testePergDiv = "Pergaminho de Magia Divina de nível: " + nvlMagia + " e nível do conjurador: " + nvlConj + " com a magia: " + magiaDiv[idMagiaDiv] + "no valor de " + valorMagiaDiv[idMagiaDiv] +" PO.";
 		return "Pergaminho de Magia Divina de nível: " + nvlMagia + " e nível do conjurador: " + nvlConj + " com a magia: " + magiaDiv[idMagiaDiv] + "no valor de " + valorMagiaDiv[idMagiaDiv] +" PO.";
 	};
 };
@@ -997,7 +975,6 @@ function sorteioCajados(cat) {															//função para sorteio de cajados
 		valorItem = [16500,16500,16500,17750,17750,17750,17750,17750,17750,24750,24750,27750,27750,27750,27750,27750,27750,29000,29000,48250,48250,48250,48250,48250,56250,56250,56250,56250,56250,56250,56250,58250,58250,58250,58250,58250,58250,58250,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,65000,73500,73500,73500,73500,73500,73500,73500,73500,80500,80500,80500,80500,80500,101250,101250,101250,101250,101250,155750,155750,155750,155750,155750,170500,170500,170500,170500,170500,211000,211000,211000];
 	};
 
-	var testeCajados = "Cajado: " + cajados[id] + ", valor: " + valorItem[id] + " PO.";
 	return "Cajado: " + cajados[id] + ", valor: " + valorItem[id] + " PO.";
 };
 
@@ -1021,7 +998,6 @@ function sorteioVarinhas(cat) {															//função para sorteio de varinha
 		valorVarinha = [6750,6750,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,11250,13500,13500,13500,13500,13500,13500,18000,18000,18000,18000,18000,18000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,21000,22500,22500,22500,24000,24000,24000,24000,26000,26000,33500];
 	};
 
-	var testeVarinha = "Varinha: " + varinha[id] + ", valor: " + valorVarinha[id] + " PO.";
 	return "Varinha: " + varinha[id] + ", valor: " + valorVarinha[id] + " PO.";
 };
 
@@ -1045,6 +1021,5 @@ function sorteioItemMaravilhoso(cat) {													//função para sorteio de it
 		valorItem = [28000,28500,30000,30000,30000,30000,30000,32000,35000,35000,35000,36000,36000,36000,36000,36000,36000,36000,36000,36000,38000,40000,40000,42000,44000,48000,49000,49000,49000,50000,50000,50000,50000,51000,53000,54000,54000,55000,55000,55000,55000,55000,55000,55000,55000,56000,58000,60000,60000,62000,64000,64000,70000,70000,70000,73500,75000,75000,76000,80000,81000,82000,82500,82500,82500,82500,82500,82500,90000,90000,92000,95800,96000,98000,100000,100000,100000,100000,110000,110000,110000,110000,110000,110000,120000,120000,120000,137500,137500,137500,137500,137500,137500,145000,150000,160000,164000,170000,175000,200000];
 	};
 
-	var testeItemMarav = "Item Maravilhoso: " + item_marav[id] + ", valor: " + valorItem[id] + " PO";
 	return "Item Maravilhoso: " + item_marav[id] + ", valor: " + valorItem[id] + " PO";
 };
